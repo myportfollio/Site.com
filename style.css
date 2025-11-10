@@ -1,0 +1,1220 @@
+:root {
+    --primary-color: #007BFF;
+    --secondary-color: #1E293B;
+    --bg-light: #FFFFFF;
+    --bg-dark: #0F172A;
+    --text-color-light: #F1F5F9;
+    --text-color-dark: #1E293B;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    /* Dark Mode variables */
+    --dark-primary-color: #ff8c00;
+    --dark-secondary-color: #f8f9fa;
+    --dark-accent-color: #6c757d;
+    --dark-light-bg: #1c2321;
+    --dark-dark-bg: #0d1210;
+    --dark-text-color-dark: #f8f9fa;
+    --dark-text-color-light: #333;
+    --dark-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+    background-color: var(--bg-light);
+    color: var(--text-color-dark);
+}
+
+a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/*----------------------------------------------------------
+    Preloader
+------------------------------------------------------------*/
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.cube-container {
+    width: 50px;
+    height: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+}
+
+.cube {
+    width: 24px;
+    height: 24px;
+    background-color: var(--primary-color);
+    animation: cube-spin 1.2s infinite ease-in-out;
+}
+
+.cube-1 {
+    animation-delay: 0s;
+}
+
+.cube-2 {
+    animation-delay: 0.2s;
+}
+
+.cube-3 {
+    animation-delay: 0.4s;
+}
+
+.cube-4 {
+    animation-delay: 0.6s;
+}
+
+@keyframes cube-spin {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.5);
+    }
+}
+
+/*----------------------------------------------------------
+    Header & Navigation
+------------------------------------------------------------*/
+
+.main-header {
+    background-color: var(--bg-light);
+    box-shadow: 0 2px 10px var(--shadow-color);
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+    padding: 0.5rem 0;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.logo-main {
+    color: var(--primary-color);
+}
+
+.logo-secondary {
+    color: var(--text-color-dark);
+}
+
+.nav-link {
+    color: var(--text-color-dark);
+    font-weight: 500;
+    padding: 0.5rem 1.5rem !important;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.navbar-toggler {
+    display: flex;
+    align-items: center;
+    border: none;
+    background: transparent;
+    padding: 0;
+    color: var(--primary-color);
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.menu-icon {
+    font-size: 1.5rem;
+}
+
+.mobile-menu-popup {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-dark);
+    color: var(--text-color-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.4s ease-in-out;
+    z-index: 1050;
+    padding-top: 5rem;
+}
+
+.mobile-menu-popup.open {
+    left: 0;
+}
+
+.mobile-logo {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.mobile-logo .logo-main,
+.mobile-logo .logo-secondary {
+    color: var(--text-color-light);
+}
+
+.close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text-color-light);
+}
+
+.mobile-nav-list a {
+    color: var(--text-color-light);
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 1rem 0;
+    display: block;
+}
+
+.social-icons a {
+    color: var(--text-color-light);
+    font-size: 1.5rem;
+    margin: 0 0.8rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--primary-color);
+}
+
+/*----------------------------------------------------------
+    Hero Section
+    - Adjusted height to be fully responsive on all devices
+------------------------------------------------------------*/
+
+.hero-section {
+    position: relative;
+    /* Use padding instead of fixed height for responsiveness */
+    padding-top: 10rem;
+    padding-bottom: 5rem;
+    /* This ensures it still fills the viewport on large screens */
+    min-height: 100vh;
+    background-color: var(--secondary-color);
+    color: var(--text-color-light);
+    overflow: hidden;
+    /* Neon glow effect */
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.4);
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-color-light);
+    text-shadow: 0 0 10px rgba(0, 123, 255, 0.6), 0 0 20px rgba(0, 123, 255, 0.4);
+}
+
+.typed-text-static {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--text-color-light);
+}
+
+.typed-text-container {
+    font-weight: 700;
+    font-size: 3.5rem;
+    line-height: 1.2;
+    background: linear-gradient( 270deg, #00c0ff, #4f68f3, #7951d9, #9d38c1, #b91f93, #cc0060, #de002c, #eb5e2c, #f59b2c);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: text-rainbow 5s linear infinite;
+}
+
+@keyframes text-rainbow {
+    to {
+        background-position: 200% center;
+    }
+}
+
+/*----------------------------------------------------------
+    Snowfall effect
+------------------------------------------------------------*/
+
+#snowfall-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.snowflake {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0;
+    box-shadow: 0 0 5px #fff, 0 0 10px #fff;
+    animation: snowfall linear infinite;
+}
+
+@keyframes snowfall {
+    0% {
+        transform: translateY(-10vh) translateX(0vw);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) translateX(5vw);
+        opacity: 0;
+    }
+}
+
+/*----------------------------------------------------------
+    Sections
+------------------------------------------------------------*/
+
+section {
+    padding: 5rem 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin: 10px auto 0;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: rgba(0, 0, 0, 0.6);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.testimonials-section {
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.4);
+}
+
+.testimonial-author {
+    color: var(--primary-color);
+}
+
+.cta-section {
+    background-color: var(--primary-color);
+}
+
+/*----------------------------------------------------------
+    Cards
+------------------------------------------------------------*/
+
+.service-card,
+.testimonial-card,
+.skill-card {
+    background-color: var(--bg-light);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover,
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.service-card i {
+    color: var(--primary-color);
+}
+
+.testimonial-quote-icon {
+    color: var(--primary-color);
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: var(--text-color-dark);
+}
+
+/* Our Work / Portfolio Card */
+
+.work-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.work-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.work-card:hover img {
+    transform: scale(1.05);
+}
+
+.work-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    color: #fff;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.work-card:hover .work-overlay {
+    opacity: 1;
+}
+
+.work-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.work-category {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Skills Section */
+
+.skills-section {
+    background-color: var(--bg-dark);
+}
+
+.skill-card {
+    color: var(--text-color-light);
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.skill-card i {
+    color: var(--primary-color);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/*----------------------------------------------------------
+    Buttons
+------------------------------------------------------------*/
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0069d9;
+    transform: translateY(-2px);
+}
+
+.btn-light {
+    background-color: var(--bg-light);
+    color: var(--text-color-dark);
+    border-color: var(--bg-light);
+    transition: transform 0.3s ease;
+}
+
+.btn-light:hover {
+    transform: translateY(-2px);
+}
+
+/*----------------------------------------------------------
+    Footer
+------------------------------------------------------------*/
+
+.main-footer {
+    background-color: var(--secondary-color);
+    color: var(--text-color-light);
+}
+
+.footer-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.footer-title::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin-top: 5px;
+}
+
+.footer-links li a,
+.footer-contact-info li {
+    color: var(--text-color-light);
+    transition: color 0.3s ease;
+}
+
+.footer-links li a:hover {
+    color: var(--primary-color);
+}
+
+.copyright-text {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/*----------------------------------------------------------
+    Scroll to Top Button
+------------------------------------------------------------*/
+
+.scroll-to-top-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 1rem;
+    background-color: var(--primary-color);
+    color: var(--bg-light);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 999;
+}
+
+.scroll-to-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top-btn:hover {
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .scroll-to-top-btn {
+        bottom: 20px;
+        right: 15px;
+        width: 40px;
+        /* Even smaller on mobile */
+        height: 40px;
+        font-size: 1.3rem;
+    }
+}
+
+/*----------------------------------------------------------
+    Media Queries (For Mobile)
+------------------------------------------------------------*/
+
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        display: none !important;
+    }
+    .hero-title,
+    .typed-text-element,
+    .typed-text-static {
+        font-size: 2.5rem;
+    }
+}
+
+/*----------------------------------------------------------
+    Page Hero Section (For About)
+    - Replaced fixed height with padding for better responsiveness
+------------------------------------------------------------*/
+
+.page-hero-section {
+    position: relative;
+    padding-top: 10rem;
+    padding-bottom: 5rem;
+    min-height: 50vh;
+    background-color: var(--secondary-color);
+    color: var(--text-color-light);
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.4);
+}
+
+.page-hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 0 0 10px rgba(0, 123, 255, 0.6), 0 0 20px rgba(0, 123, 255, 0.4);
+}
+
+.page-hero-subtitle {
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+}
+
+/*----------------------------------------------------------
+    Team Section
+------------------------------------------------------------*/
+
+.team-member-card {
+    background-color: var(--bg-light);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.team-member-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+    transition: border-color 0.3s ease;
+}
+
+.team-member-card:hover img {
+    border-color: #0069d9;
+}
+
+.member-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.member-position {
+    font-size: 0.9rem;
+    color: var(--text-color-dark);
+}
+
+.member-social-icons a {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.member-social-icons a:hover {
+    color: var(--primary-color);
+}
+
+/*----------------------------------------------------------
+    Why Choose Us Section
+------------------------------------------------------------*/
+
+.why-us-card {
+    background-color: var(--bg-light);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-us-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.why-us-card i {
+    color: var(--primary-color);
+}
+
+/* ... (Your existing CSS code remains the same) ... */
+
+/*----------------------------------------------------------
+    Pricing Section (New Design)
+------------------------------------------------------------*/
+
+.pricing-card {
+    background-color: var(--bg-light);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 3rem 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card .plan-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.pricing-card .plan-price {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 1rem 0;
+}
+
+.pricing-card .price-currency {
+    font-size: 1.5rem;
+    font-weight: 500;
+    position: relative;
+    top: -1.5rem;
+    margin-right: -0.5rem;
+}
+
+.pricing-card .price-period {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-color-dark);
+    opacity: 0.7;
+}
+
+.pricing-card .plan-features {
+    padding-top: 1rem;
+    list-style: none;
+    padding-left: 0;
+}
+
+.pricing-card .plan-features li {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pricing-card .plan-features i {
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
+
+.pricing-card .plan-features li.text-muted {
+    opacity: 0.5;
+}
+
+.pricing-card .plan-features li.text-muted i {
+    color: var(--text-color-dark);
+}
+
+/* Most Popular Card Style - New look */
+
+.pricing-card-popular {
+    background-color: var(--secondary-color);
+    color: var(--text-color-light);
+    transform: scale(1.05);
+    border: none;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.pricing-card-popular .plan-title,
+.pricing-card-popular .plan-price,
+.pricing-card-popular .price-currency,
+.pricing-card-popular .price-period,
+.pricing-card-popular .plan-features li {
+    color: var(--text-color-light);
+}
+
+.pricing-card-popular .plan-features i {
+    color: var(--text-color-light);
+}
+
+.pricing-card-popular .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--text-color-light);
+    font-weight: 600;
+}
+
+.pricing-card-popular .btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0069d9;
+}
+
+.pricing-card-popular .badge {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    font-weight: 600;
+    padding: 0.5em 1.5em;
+    font-size: 0.8rem;
+    top: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+/* New button style for normal cards */
+
+.pricing-card .btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/*----------------------------------------------------------
+    Contact Section
+------------------------------------------------------------*/
+
+.contact-section {
+    background-color: var(--bg-light);
+}
+
+.contact-section .form-control {
+    background-color: var(--bg-dark);
+    border: none;
+    color: var(--text-color-light);
+    padding: 1.2rem;
+    border-radius: 5px;
+}
+
+.contact-section .form-control::placeholder {
+    color: var(--text-color-light);
+    opacity: 0.7;
+}
+
+.contact-section .form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+    background-color: var(--bg-dark);
+    color: var(--text-color-light);
+    border-color: var(--primary-color);
+}
+
+.contact-info .info-item {
+    display: flex;
+    align-items: center;
+}
+
+.contact-info .info-item i {
+    color: var(--primary-color);
+}
+
+.contact-info .info-item h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+
+.contact-info .info-item p {
+    font-size: 0.9rem;
+    color: var(--text-color-dark);
+    margin-bottom: 0;
+}
+
+.map-container {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/*----------------------------------------------------------
+    404 Error Page
+------------------------------------------------------------*/
+
+.error-404-section {
+    position: relative;
+    background-color: var(--secondary-color);
+    color: var(--text-color-light);
+    min-height: 100vh;
+    padding: 2rem;
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.4);
+}
+
+.error-code {
+    font-size: 8rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--text-color-dark);
+    text-shadow: 0 0 20px rgba(0, 123, 255, 0.6);
+    background: linear-gradient( 270deg, #00c0ff, #4f68f3, #7951d9, #9d38c1, #b91f93, #cc0060, #de002c, #eb5e2c, #f59b2c);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: text-rainbow 5s linear infinite;
+}
+
+.error-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    text-shadow: 0 0 10px rgba(0, 123, 255, 0.4);
+}
+
+.error-message {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.8;
+}
+
+/*----------------------------------------------------------
+    Coming Soon Page
+------------------------------------------------------------*/
+
+.coming-soon-section {
+    position: relative;
+    background-color: var(--secondary-color);
+    color: var(--text-color-light);
+    min-height: 100vh;
+    padding: 2rem;
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.4);
+}
+
+.coming-soon-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 0 0 10px rgba(0, 123, 255, 0.6);
+}
+
+.coming-soon-message {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.8;
+}
+
+/* Countdown Timer Styles */
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.countdown-number {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1;
+    text-shadow: 0 0 10px rgba(0, 123, 255, 0.6);
+}
+
+.countdown-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Subscribe Form Styles */
+
+.subscribe-form {
+    max-width: 500px;
+    background-color: var(--bg-dark);
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.subscribe-form .form-control {
+    background-color: transparent;
+    border: none;
+    color: var(--text-color-light);
+    padding: 1rem 1.5rem;
+}
+
+.subscribe-form .form-control::placeholder {
+    color: var(--text-color-light);
+    opacity: 0.6;
+}
+
+.subscribe-form .form-control:focus {
+    box-shadow: none;
+    background-color: transparent;
+    color: var(--text-color-light);
+}
+
+.subscribe-form .btn {
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+/*----------------------------------------------------------
+    Snowfall Toggle Button (Gear Shape)
+------------------------------------------------------------*/
+
+.snowfall-toggle-btn {
+    position: fixed;
+    bottom: 85px;
+    /* Adjusts the position above the back-to-top button */
+    right: 1%;
+    width: 45px;
+    /* Smaller size */
+    height: 45px;
+    /* Smaller size */
+    background-color: var(--primary-color);
+    /* Blue background */
+    border: none;
+    color: #fff;
+    /* White icon color */
+    border-radius: 50%;
+    /* Make it round */
+    text-align: center;
+    font-size: 1.6rem;
+    /* Good icon size */
+    cursor: pointer;
+    z-index: 999;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /* Subtle shadow */
+}
+
+.snowfall-toggle-btn:hover {
+    background-color: #0056b3;
+    /* Darker blue on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    /* More prominent shadow on hover */
+    transform: scale(1.05);
+    /* Slightly enlarge on hover */
+}
+
+/* Optional: Add a spinning animation to the gear icon when active */
+
+.snowfall-toggle-btn.active i {
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive adjustment for smaller screens */
+
+@media (max-width: 768px) {
+    .snowfall-toggle-btn {
+        bottom: 65px;
+        right: 15px;
+        width: 40px;
+        /* Even smaller on mobile */
+        height: 40px;
+        font-size: 1.3rem;
+    }
+}
+
+/*----------------------------------------------------------
+    Dark Mode Toggle Button
+------------------------------------------------------------*/
+
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    color: var(--text-color-dark);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    margin-left: 15px;
+    /* Adds space to the left of the button */
+}
+
+.theme-toggle-btn:hover {
+    color: var(--primary-color);
+}
+
+.theme-toggle-btn .fa-sun {
+    color: #ffc107;
+    /* A bright yellow for the sun icon */
+}
+
+/* Adjustments for Mobile screens */
+
+@media (max-width: 768px) {
+    .theme-toggle-btn {
+        margin-left: 10px;
+        /* Adjusts the left margin on mobile */
+        margin-right: 20px;
+        /* Pushes the button to the left, away from the edge */
+    }
+    .main-header .navbar-nav {
+        margin-right: 20px;
+    }
+}
+
+/*----------------------------------------------------------
+    Dark Mode Styles
+------------------------------------------------------------*/
+
+body.dark-mode {
+    background-color: var(--dark-dark-bg);
+    color: var(--dark-text-color-dark);
+}
+
+body.dark-mode .main-header {
+    background-color: var(--dark-light-bg);
+    box-shadow: var(--dark-box-shadow);
+}
+
+body.dark-mode .nav-link,
+body.dark-mode .theme-toggle-btn {
+    color: var(--dark-text-color-dark);
+}
+
+body.dark-mode .nav-link:hover,
+body.dark-mode .nav-link.active {
+    color: var(--dark-primary-color);
+}
+
+body.dark-mode .section {
+    background-color: var(--dark-dark-bg);
+}
+
+body.dark-mode .section-title,
+body.dark-mode .section-subtitle,
+body.dark-mode .card-title,
+body.dark-mode .card-text,
+body.dark-mode .accordion-button {
+    color: var(--dark-text-color-dark);
+}
+
+body.dark-mode .card,
+body.dark-mode .accordion-item {
+    background-color: var(--dark-light-bg);
+    box-shadow: var(--dark-box-shadow);
+}
+
+body.dark-mode .offcanvas-header,
+body.dark-mode .offcanvas-body {
+    background-color: var(--dark-light-bg);
+}
+
+/* New additions for dark mode */
+
+/* Logo text */
+
+body.dark-mode .logo-secondary {
+    color: var(--dark-text-color-dark);
+}
+
+/* Our Services section card content */
+
+body.dark-mode .service-card {
+    background-color: var(--dark-light-bg);
+}
+
+/* Team section member names */
+
+body.dark-mode .team-member-card {
+    background-color: var(--dark-light-bg);
+}
+
+body.dark-mode .member-position {
+    color: var(--dark-text-color-dark) !important;
+}
+
+body.dark-mode .member-social-icons a {
+    color: var(--dark-text-color-dark);
+}
+
+body.dark-mode .why-us-card {
+    background-color: var(--dark-light-bg);
+}
+
+/* Pricing section card content */
+
+body.dark-mode .pricing-card {
+    background-color: var(--dark-light-bg);
+}
+
+body.dark-mode .pricing-card .card-title,
+body.dark-mode .pricing-card .card-text {
+    color: var(--dark-text-color-dark);
+}
+
+/* Contact page - Contact form section background */
+
+body.dark-mode .contact-section {
+    background-color: var(--bg-dark);
+}
+
+body.dark-mode .contact-section .form-control {
+    background-color: var(--bg-light);
+    border: none;
+    color: var(--text-color-dark);
+    padding: 1.2rem;
+    border-radius: 5px;
+}
+
+body.dark-mode .contact-section .form-control::placeholder {
+    color: var(--text-color-dark);
+    opacity: 0.7;
+}
+
+body.dark-mode .contact-section .form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+    background-color: var(--bg-light);
+    color: var(--text-color-dark);
+    border-color: var(--primary-color);
+}
+
+body.dark-mode .contact-info .info-item p {
+    font-size: 0.9rem;
+    color: var(--text-color-light);
+    margin-bottom: 0;
+}

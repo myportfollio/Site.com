@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebXpert | Portfolio</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+
+    <!-- Quick reliable Font Awesome (drop-in) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="preload" href="swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="swiper-bundle.min.css">
+    </noscript>
+    <link rel="preload" href="bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="bootstrap.min.css">
+    </noscript>
+    <link rel="preload" href="all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="all.min.css">
+    </noscript>
+    <link rel="stylesheet" href="poppins.css">
+    <link rel="preload" href="aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="aos.css">
+    </noscript>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body class="light-mode">
+    <div id="snowfall-container"></div>
+    <div id="preloader">
+        <div class="cube-container">
+            <div class="cube cube-1"></div>
+            <div class="cube cube-2"></div>
+            <div class="cube cube-3"></div>
+            <div class="cube cube-4"></div>
+        </div>
+    </div>
+
+    <header class="main-header fixed-top">
+        <nav class="navbar navbar-expand-lg px-3 py-3">
+            <div class="container-fluid">
+                <div class="d-flex align-items-center w-100 justify-content-between">
+                    <a class="navbar-brand me-0" href="index.html">
+                        <span class="logo-main">Web</span><span class="logo-secondary">Xpert</span>
+                    </a>
+                    <button class="navbar-toggler d-block d-lg-none" type="button" id="mobile-menu-toggle">
+                        <i class="fa-solid fa-bars menu-icon"></i>
+                    </button>
+                    <div class="theme-toggle-container">
+                        <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="collapse navbar-collapse justify-content-end d-none d-lg-block" id="navbarNav">
+                    <ul class="navbar-nav desktop-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#portfolio">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="mobile-menu-popup" id="mobile-menu-popup">
+        <span class="fa-solid fa-xmark close-btn" id="mobile-menu-close"></span>
+        <a class="navbar-brand me-0 mobile-logo" href="index.html">
+            <span class="logo-main">Web</span><span class="logo-secondary">Xpert</span>
+        </a>
+        <ul class="mobile-nav-list list-unstyled text-center">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="social-icons mt-4">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="WHatsapp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+
+    <section class="hero-section text-center d-flex align-items-center justify-content-center">
+        <div class="container">
+            <p class="hero-subtitle" data-aos="fade-up">Welcome to my Portfolio website</p>
+            <h1 class="hero-title text-light" data-aos="fade-up" data-aos-delay="100">
+                <span class="typed-text-static">I Build</span>
+                <span class="typed-text-container">
+                    <span class="typed-text-element"
+                        data-typed-strings="Responsive Websites, Animation Websites, Ecommerce Websites, Business Websites, Company Websites, Portfolio Websites"></span>
+                </span>
+            </h1>
+            <a href="#contact" class="btn btn-primary btn-lg mt-4" data-aos="fade-up" data-aos-delay="200">
+                Hire Me
+            </a>
+        </div>
+    </section>
+
+    <section id="services" class="services-section py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto" data-aos="fade-up">
+                    <h2 class="section-title">Services</h2>
+                    <p class="section-subtitle">
+                        I offer a full suite of digital services to help your business thrive online.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card p-4 text-center h-100">
+                        <i class="fas fa-chart-line fa-3x mb-3"></i>
+                        <h4 class="card-title">Digital Marketing</h4>
+                        <p class="card-text">
+                            Boost your online presence and reach your target audience with our data-driven strategies.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card p-4 text-center h-100">
+                        <i class="fas fa-code fa-3x mb-3"></i>
+                        <h4 class="card-title">Web Development</h4>
+                        <p class="card-text">
+                            Building fast, secure, and responsive websites that perform across all devices.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card p-4 text-center h-100">
+                        <i class="fas fa-paint-brush fa-3x mb-3"></i>
+                        <h4 class="card-title">Branding & Design</h4>
+                        <p class="card-text">
+                            Crafting unique brand identities and captivating designs that leave a lasting impression.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="work-section py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto" data-aos="fade-up">
+                    <h2 class="section-title">Our Recent Work</h2>
+                    <p class="section-subtitle">
+                        A glimpse into some of our latest projects and creations.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="work-card">
+                        <img src="project1.webp" alt="Project 1" class="img-fluid rounded shadow" loading="lazy">
+                        <div class="work-overlay">
+                            <h4 class="work-title">Project Title</h4>
+                            <p class="work-category">Web Development</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="work-card">
+                        <img src="project2.webp" alt="Project 2" class="img-fluid rounded shadow" loading="lazy">
+                        <div class="work-overlay">
+                            <h4 class="work-title">Project Title</h4>
+                            <p class="work-category">Branding</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="work-card">
+                        <img src="project3.webp" alt="Project 3" class="img-fluid rounded shadow" loading="lazy">
+                        <div class="work-overlay">
+                            <h4 class="work-title">Project Title</h4>
+                            <p class="work-category">Digital Marketing</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="work-card">
+                        <img src="project4.webp" alt="Project 2" class="img-fluid rounded shadow" loading="lazy">
+                        <div class="work-overlay">
+                            <h4 class="work-title">Project Title</h4>
+                            <p class="work-category">Branding</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="work-card">
+                        <img src="project5.webp" alt="Project 2" class="img-fluid rounded shadow" loading="lazy">
+                        <div class="work-overlay">
+                            <h4 class="work-title">Project Title</h4>
+                            <p class="work-category">Branding</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="work-card">
+                        <img src="project6.webp" alt="Project 2" class="img-fluid rounded shadow" loading="lazy">
+                        <div class="work-overlay">
+                            <h4 class="work-title">Project Title</h4>
+                            <p class="work-category">Branding</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonial" class="testimonials-section py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto" data-aos="fade-up">
+                    <h2 class="section-title text-light">What Our Clients Say</h2>
+                    <p class="section-subtitle text-light">
+                        Don't just take our word for it. Hear from those we've helped succeed.
+                    </p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-card p-4 text-center">
+                        <i class="fas fa-quote-left fa-2x mb-3 testimonial-quote-icon"></i>
+                        <p class="testimonial-text mb-3">
+                            "ApexTemplate exceeded all our expectations. Their team was professional, highly skilled, and delivered a website that perfectly captures our brand. Highly recommended!"
+                        </p>
+                        <h5 class="testimonial-author">Jane Doe</h5>
+                        <p class="testimonial-company text-muted">CEO, Tech Innovators</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card p-4 text-center">
+                        <i class="fas fa-quote-left fa-2x mb-3 testimonial-quote-icon"></i>
+                        <p class="testimonial-text mb-3">
+                            "The digital marketing campaign they designed for us was a game-changer. Our traffic and conversions have skyrocketed since we started working with them."
+                        </p>
+                        <h5 class="testimonial-author">John Smith</h5>
+                        <p class="testimonial-company text-muted">Founder, Urban Apparel</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="cta-section py-5 text-center">
+        <div class="container">
+            <h2 class="section-title text-light" data-aos="fade-up">Ready to Transform Your Business?</h2>
+            <p class="section-subtitle text-light" data-aos="fade-up" data-aos-delay="100">
+                Let's work together to create something amazing.
+            </p>
+            <a href="#contact" class="btn btn-light btn-lg mt-4" data-aos="fade-up" data-aos-delay="200">Contact Us
+                Today</a>
+        </div>
+    </section>
+
+    <footer class="main-footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="footer-title">About Us</h5>
+                    <p class="footer-description">We are a passionate team dedicated to creating exceptional digital experiences for our clients.</p>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5 class="footer-title">Links</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5 class="footer-title">Services</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="#">SEO</a></li>
+                        <li><a href="#">Web Dev</a></li>
+                        <li><a href="#">Branding</a></li>
+                        <li><a href="#">Social Media</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5 class="footer-title">Contact</h5>
+                    <ul class="footer-contact-info list-unstyled">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Main Street, City, Country</li>
+                        <li><i class="fas fa-envelope"></i> info@agency.com</li>
+                        <li><i class="fas fa-phone"></i> +123 456 7890</li>
+                    </ul>
+                    <div class="social-icons mt-3">
+                        <a href="#" aria-label="facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="twitter"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" aria-label="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <p class="copyright-text mb-0">© 2025 ApexTemplate. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="snowfall-toggle-btn" id="snowfall-toggle-btn" aria-label="Toggle Snowfall Effect">
+        <i class="fas fa-power-off"></i>
+    </button>
+
+    <a href="#" id="scroll-to-top" class="btn scroll-to-top-btn" aria-label="Scroll to Top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <script src="swiper-bundle.min.js" defer></script>
+    <script src="bootstrap.bundle.min.js" defer></script>
+    <script src="aos.js" defer></script>
+    <script src="typed.umd.js" defer></script>
+    <script src="main.js" defer></script>
+</body>
+
+</html>
