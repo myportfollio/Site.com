@@ -812,91 +812,130 @@ section {
     Contact Section
 ------------------------------------------------------------*/
 
-.contact-section {
-    background-color: var(--bg-light);
-}
-
-.contact-section .form-control {
-    background-color: var(--bg-dark);
-    border: none;
-    color: var(--text-color-light);
-    padding: 1.2rem;
-    border-radius: 5px;
-}
-
-.contact-section .form-control::placeholder {
-    color: var(--text-color-light);
-    opacity: 0.7;
-}
-
-.contact-section .form-control:focus {
-    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
-    background-color: var(--bg-dark);
-    color: var(--text-color-light);
-    border-color: var(--primary-color);
-}
-
-.contact-info .info-item {
-    display: flex;
-    align-items: center;
-}
-
-.contact-info .info-item i {
-    color: var(--primary-color);
-}
-
-.contact-info .info-item h5 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.2rem;
-}
-
-.contact-info .info-item p {
-    font-size: 0.9rem;
-    color: var(--text-color-dark);
-    margin-bottom: 0;
-}
-
-.map-container {
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-  Contact Section
+/*----------------------------------------------------------
+    Contact Section
 ------------------------------------------------------------*/
 
+.contact-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--bg-light));
+    color: var(--text-color-light);
+    padding: 80px 20px;
+    position: relative;
+    text-align: center;
+}
+
+/* Optional floating dots background effect */
+.contact-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(white 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.15;
+    animation: floatDots 20s linear infinite;
+    z-index: 0;
+}
+
+@keyframes floatDots {
+    from { background-position: 0 0; }
+    to { background-position: 100px 100px; }
+}
+
+/*--------------------------
+    Contact Form
+---------------------------*/
 .contact-form {
     max-width: 600px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Form groups */
 .contact-form .form-group {
     margin-bottom: 1.5rem;
+    text-align: left;
 }
 
 .contact-form label {
     display: block;
     font-weight: 600;
     margin-bottom: 0.5rem;
-    color: var(--text-dark);
+    color: var(--text-color-light);
 }
 
+/* Inputs and textareas */
 .contact-form input,
 .contact-form textarea {
     width: 100%;
     padding: 1rem;
-    border: 1px solid var(--text-muted);
-    border-radius: 8px;
-    background-color: var(--surface-color);
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
     color: var(--text-dark);
-    transition: border-color 0.3s ease;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--text-muted);
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.3);
+    border: none;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.4);
+}
+
+/* Button */
+.contact-form .btn-primary {
+    width: 100%;
+    background-color: #fff;
+    color: var(--primary-color);
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.contact-form .btn-primary:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* Success message */
+#success-message {
+    margin-top: 15px;
+    font-weight: 600;
+    color: #00ff99;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 25px;
+    }
+    .contact-section {
+        padding: 60px 15px;
+    }
+    .section-title {
+        font-size: 1.6rem;
+    }
 }
 
 /*----------------------------------------------------------
@@ -1255,3 +1294,4 @@ body.dark-mode .contact-info .info-item p {
     margin-bottom: 0;
 
 }
+
