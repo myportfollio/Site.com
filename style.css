@@ -862,6 +862,42 @@ section {
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
+  Contact Section
+------------------------------------------------------------*/
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--text-muted);
+    border-radius: 8px;
+    background-color: var(--surface-color);
+    color: var(--text-dark);
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.3);
+}
 
 /*----------------------------------------------------------
     404 Error Page
@@ -1217,4 +1253,5 @@ body.dark-mode .contact-info .info-item p {
     font-size: 0.9rem;
     color: var(--text-color-light);
     margin-bottom: 0;
+
 }
