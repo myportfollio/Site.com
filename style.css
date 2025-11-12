@@ -811,131 +811,102 @@ section {
 /*----------------------------------------------------------
     Contact Section
 ------------------------------------------------------------*/
-
-/*----------------------------------------------------------
-    Contact Section
-------------------------------------------------------------*/
-
-.contact-section {
-    background: linear-gradient(135deg, var(--primary-color), var(--bg-light));
-    color: var(--text-color-light);
-    padding: 80px 20px;
-    position: relative;
-    text-align: center;
+/* Contact Section */
+.cta-section {
+  background: linear-gradient(135deg, #007bff, #00aaff);
+  color: #fff;
+  padding: 80px 20px;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Optional floating dots background effect */
-.contact-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: radial-gradient(white 1px, transparent 1px);
-    background-size: 30px 30px;
-    opacity: 0.15;
-    animation: floatDots 20s linear infinite;
-    z-index: 0;
+/* Floating dots background */
+.cta-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.2;
+  animation: floatDots 20s linear infinite;
 }
 
 @keyframes floatDots {
-    from { background-position: 0 0; }
-    to { background-position: 100px 100px; }
+  from { background-position: 0 0; }
+  to { background-position: 100px 100px; }
 }
 
-/*--------------------------
-    Contact Form
----------------------------*/
+/* Contact Form Box */
 .contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 40px;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  max-width: 480px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2;
+  text-align: left;
 }
 
-/* Form groups */
-.contact-form .form-group {
-    margin-bottom: 1.5rem;
-    text-align: left;
-}
-
+/* Labels */
 .contact-form label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: var(--text-color-light);
+  display: block;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 5px;
 }
 
-/* Inputs and textareas */
+/* Input fields */
 .contact-form input,
 .contact-form textarea {
-    width: 100%;
-    padding: 1rem;
-    border: none;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.9);
-    color: var(--text-dark);
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-    color: var(--text-muted);
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-    outline: none;
-    border: none;
-    background-color: #fff;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.4);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.4);
+  background-color: #fff;
 }
 
 /* Button */
 .contact-form .btn-primary {
-    width: 100%;
-    background-color: #fff;
-    color: var(--primary-color);
-    border: none;
-    padding: 12px;
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s ease;
+  display: block;
+  width: 100%;
+  background: #fff;
+  color: #007bff;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .contact-form .btn-primary:hover {
-    background-color: var(--primary-color);
-    color: #fff;
-    transform: scale(1.05);
+  background: #007bff;
+  color: #fff;
+  transform: scale(1.05);
 }
 
-/* Success message */
-#success-message {
-    margin-top: 15px;
-    font-weight: 600;
-    color: #00ff99;
-}
-
-/* Responsive adjustments */
+/* Responsive tweaks */
 @media (max-width: 768px) {
-    .contact-form {
-        padding: 25px;
-    }
-    .contact-section {
-        padding: 60px 15px;
-    }
-    .section-title {
-        font-size: 1.6rem;
-    }
+  .contact-form {
+    padding: 20px;
+  }
 }
 
 /*----------------------------------------------------------
@@ -1294,4 +1265,5 @@ body.dark-mode .contact-info .info-item p {
     margin-bottom: 0;
 
 }
+
 
